@@ -1,4 +1,4 @@
-API_URL = 'https://restcountries.com/v3.1/name/';
+const API_URL = 'https://restcountries.com/v3.1/name/';
 import Notiflix from 'notiflix';
 
 export function fetchCountries(nameOfCountry) {
