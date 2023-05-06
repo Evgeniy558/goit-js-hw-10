@@ -29,7 +29,6 @@ function creatCountryInfo(countries) {
   divEl.style.display = 'flex';
   divEl.style.flexDirection = 'column';
 
-  ('<p style=padding-left:20px;font-weight:700;font-size:20px;margin:5px>Capital: <span style=font-weight:400>');
   divEl.innerHTML = `<p style=display:flex;gap:15px;align-items:center;padding-left:20px;font-size:40px;font-weight:700> <img width="40px" height="40px" 
     src='${flags.svg}'/> ${name.official}</p>
     <p style=padding-left:20px;font-weight:700;font-size:20px;margin:5px>Capital: <span style=font-weight:400>${capital}</span></p>
@@ -46,10 +45,13 @@ inputEl.addEventListener(
     let nameOfCountry = ev.target.value.trim();
     fetchCountries(nameOfCountry).then(countries => {
       if (countries.length > 10) {
+        divEl.innerHTML = '';
+        ulEl.innerHTML = '';
         Notiflix.Notify.info(
           'Too many matches found. Please enter a more specific name.'
         );
       } else if (10 >= countries.length && countries.length >= 2) {
+        divEl.innerHTML = '';
         creatListOfCountries(countries);
       } else {
         creatCountryInfo(countries);
