@@ -10,6 +10,7 @@ const divEl = document.querySelector('.country-info');
 const DEBOUNCE_DELAY = 300;
 
 function creatListOfCountries(countries) {
+  ulEl.innerHTML = '';
   countries.forEach(({ flags, name }) => {
     const liEl = document.createElement('li');
     liEl.innerHTML = `<img width="20px" height="20px"
@@ -28,7 +29,6 @@ function creatCountryInfo(countries) {
   }
   divEl.style.display = 'flex';
   divEl.style.flexDirection = 'column';
-
   divEl.innerHTML = `<p style=display:flex;gap:15px;align-items:center;padding-left:20px;font-size:40px;font-weight:700> <img width="40px" height="40px" 
     src='${flags.svg}'/> ${name.official}</p>
     <p style=padding-left:20px;font-weight:700;font-size:20px;margin:5px>Capital: <span style=font-weight:400>${capital}</span></p>

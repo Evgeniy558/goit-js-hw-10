@@ -14,7 +14,7 @@ body {
 .country-list {
   list-style-type: none;
   font-size: 20px;
-}
+  }
 
 #search-box {
   font: inherit;
